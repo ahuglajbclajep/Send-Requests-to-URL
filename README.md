@@ -11,9 +11,9 @@ gradlew run -P url=http://example.com
 ```
 or
 ```
-gradlew build
-cd build/classes/main
-java ahuglajbclajep.sendreq.SendRequests http://example.com
+cd src/main/java
+javac -encoding UTF-8 ahuglajbclajep/simpapp/sendreq/SendRequests.java
+java ahuglajbclajep.simpapp.sendreq.SendRequests http://example.com
 ```
 ## Licence
 [MIT](LICENSE)

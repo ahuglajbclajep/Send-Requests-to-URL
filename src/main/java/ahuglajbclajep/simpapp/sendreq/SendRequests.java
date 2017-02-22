@@ -1,4 +1,4 @@
-package ahuglajbclajep.sendreq;
+package ahuglajbclajep.simpapp.sendreq;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

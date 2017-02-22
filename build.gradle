@@ -1,4 +1,4 @@
-group 'ahuglajbclajep.sendreq'
+group 'ahuglajbclajep.simpapp.sendreq'
 version '1.0'
 
 apply plugin: 'java'
@@ -7,7 +7,7 @@ apply plugin: 'application'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-mainClassName = 'ahuglajbclajep.sendreq.SendRequests'
+mainClassName = 'ahuglajbclajep.simpapp.sendreq.SendRequests'
 
 run {
     if (project.hasProperty('url')) {
