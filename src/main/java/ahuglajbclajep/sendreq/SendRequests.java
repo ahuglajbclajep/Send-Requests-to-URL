@@ -15,15 +15,12 @@ public class SendRequests {
 
         } catch (ArrayIndexOutOfBoundsException e){
             System.err.println("usage: java AutoAccess <URL>");
-            System.exit(1);
 
         } catch (MalformedURLException e){
             System.err.println("an unknown protocol is found");
-            System.exit(1);
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.exit(1);
         }
     }
 }
