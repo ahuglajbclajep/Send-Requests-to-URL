@@ -7,7 +7,13 @@ Commons CLI で argparse
 ## Usage
 ### Run
 ```
-gradlew run -Purl=http://example.com
+gradlew run -P url=http://example.com
+```
+or
+```
+gradlew build
+cd build/classes/main
+java ahuglajbclajep.sendreq.SendRequests http://example.com
 ```
 ## Licence
 [MIT](LICENSE)
