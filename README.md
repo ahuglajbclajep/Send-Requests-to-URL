@@ -7,13 +7,7 @@ Commons CLI で argparse
 ## Usage
 ### Run
 ```
-gradlew run -P url=http://example.com
-```
-or
-```
-cd src/main/java
-javac -encoding UTF-8 ahuglajbclajep/simpapp/sendreq/SendRequests.java
-java ahuglajbclajep.simpapp.sendreq.SendRequests http://example.com
+gradlew run -P args="-u http://example.com"
 ```
 ## Licence
 [MIT](LICENSE)

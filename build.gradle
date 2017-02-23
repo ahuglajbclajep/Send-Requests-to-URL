@@ -10,7 +10,16 @@ targetCompatibility = 1.8
 mainClassName = 'ahuglajbclajep.simpapp.sendreq.SendRequests'
 
 run {
-    if (project.hasProperty('url')) {
-        args project.url
+    if (project.hasProperty('args')) {
+        args project.args.split("\\s")  // 空白文字で区切る
     }
+    println "args = " + args
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'commons-cli:commons-cli:1.3.1'
 }
