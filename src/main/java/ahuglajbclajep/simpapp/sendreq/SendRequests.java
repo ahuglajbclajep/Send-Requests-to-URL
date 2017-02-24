@@ -20,14 +20,9 @@ public class SendRequests {
         options.addOption(Option.builder("u")
                 .longOpt("url")
                 .argName("url")
-                .desc("---")
+                .desc("URL, you want to requests")
                 .hasArg()
                 .required()
-                .build());
-
-        options.addOption(Option.builder("h")
-                .longOpt("help")
-                .desc("---")
                 .build());
 
         CommandLine cmd;
@@ -36,7 +31,9 @@ public class SendRequests {
             cmd = new DefaultParser().parse(options, args);
 
         } catch (ParseException e) {
-            usage.printHelp("hoge [options] <fuga>", options);
+            String header = "Send requests to url, and get responses";
+            String footer = "If you find bugs, please report issues at https://github.com/ahuglajbclajep/send-requests-to-url/issues";
+            usage.printHelp("gradlew run -P args=\"-u http://example.com\"", header, options, footer);
             return;
         }
 
