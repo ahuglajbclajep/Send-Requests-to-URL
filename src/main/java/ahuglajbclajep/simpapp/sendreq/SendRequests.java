@@ -17,31 +17,31 @@ public class SendRequests {
     public static void main(String[] args) {
         final Options options = new Options();
 
-        options.addOption(Option.builder("u")
-                .longOpt("url")
+        options.addOption(Option.builder("d")
+                .longOpt("destination")
                 .argName("url")
-                .desc("URL, you want to requests")
+                .desc("Destination url, required")
                 .hasArg()
                 .required()
                 .build());
 
-        options.addOption(Option.builder("c")
-                .longOpt("counts")
+        options.addOption(Option.builder("t")
+                .longOpt("trials")
                 .argName("int")
-                .desc("c--")
+                .desc("Number of trials")
                 .hasArg()
                 .build());
 
-        options.addOption(Option.builder("d")
-                .longOpt("delay")
+        options.addOption(Option.builder("i")
+                .longOpt("interval")
                 .argName("int")
-                .desc("d--")
+                .desc("Send interval, sec")
                 .hasArg()
                 .build());
 
-        options.addOption(Option.builder("o")
-                .longOpt("offsets")
-                .desc("o--")
+        options.addOption(Option.builder("a")
+                .longOpt("antiphase")
+                .desc("Take a interval at first")
                 .build());
 
         CommandLine cmd;
@@ -60,16 +60,14 @@ public class SendRequests {
             if (cmd.hasOption('c') && Integer.parseInt(cmd.getOptionValue('c')) > 1) {
                 counts = Integer.parseInt(cmd.getOptionValue('c'));
             }
-        } catch (NumberFormatException e) {
-        }
+        } catch (NumberFormatException e) {}
 
         int delay = 1;
         try {
             if (cmd.hasOption('d') && Integer.parseInt(cmd.getOptionValue('d')) > 1) {
                 delay = Integer.parseInt(cmd.getOptionValue('d'));
             }
-        } catch (NumberFormatException e) {
-        }
+        } catch (NumberFormatException e) {}
 
         boolean offsets = false;
         if (cmd.hasOption('o')) {
