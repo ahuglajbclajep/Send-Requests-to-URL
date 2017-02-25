@@ -17,8 +17,8 @@ public class SendRequests {
     public static void main(String[] args) {
         final Options options = new Options();
 
-        options.addOption(Option.builder("d")
-                .longOpt("destination")
+        options.addOption(Option.builder("u")
+                .longOpt("url")
                 .argName("url")
                 .desc("Destination url, required")
                 .hasArg()
@@ -35,12 +35,12 @@ public class SendRequests {
         options.addOption(Option.builder("i")
                 .longOpt("interval")
                 .argName("int")
-                .desc("Send interval, sec")
+                .desc("Interval of send, sec")
                 .hasArg()
                 .build());
 
-        options.addOption(Option.builder("a")
-                .longOpt("antiphase")
+        options.addOption(Option.builder("d")
+                .longOpt("delay")
                 .desc("Take a interval at first")
                 .build());
 
@@ -55,29 +55,29 @@ public class SendRequests {
             return;
         }
 
-        int counts = 1;
+        int trials = 1;
         try {
-            if (cmd.hasOption('c') && Integer.parseInt(cmd.getOptionValue('c')) > 1) {
-                counts = Integer.parseInt(cmd.getOptionValue('c'));
+            if (cmd.hasOption('t') && Integer.parseInt(cmd.getOptionValue('t')) > 1) {
+                trials = Integer.parseInt(cmd.getOptionValue('t'));
             }
         } catch (NumberFormatException e) {}
 
-        int delay = 1;
+        int interval = 1;
         try {
-            if (cmd.hasOption('d') && Integer.parseInt(cmd.getOptionValue('d')) > 1) {
-                delay = Integer.parseInt(cmd.getOptionValue('d'));
+            if (cmd.hasOption('i') && Integer.parseInt(cmd.getOptionValue('i')) > 1) {
+                interval = Integer.parseInt(cmd.getOptionValue('i'));
             }
         } catch (NumberFormatException e) {}
 
-        boolean offsets = false;
+        boolean delay = false;
         if (cmd.hasOption('o')) {
-            offsets = true;
+            delay = true;
         }
 
-        for (int i = 0; i < counts; i++) {
-            if (i != 0 || offsets) {
+        for (int i = 0; i < trials; i++) {
+            if (i != 0 || delay) {
                 try{
-                    Thread.sleep(delay * 1000);
+                    Thread.sleep(interval * 1000);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
