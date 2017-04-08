@@ -1,4 +1,4 @@
-package ahuglajbclajep.simpapp.sendreq;
+package ahuglajbclajep.simpapp;
 
 
 import org.apache.commons.cli.CommandLine;

@@ -1,5 +1,9 @@
-group 'ahuglajbclajep.simpapp.sendreq'
+group 'ahuglajbclajep.simpapp'
 version '1.0'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 apply plugin: 'java'
 apply plugin: 'application'
