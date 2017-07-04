@@ -18,5 +18,5 @@ gradlew run -P args="-u http://example.com"
 
 送信回数1回かつ間隔が1秒で遅延なしのとき最速で実行
 
-## Licence
+## License
 [MIT](LICENSE)
