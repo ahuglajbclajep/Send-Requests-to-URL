@@ -1,4 +1,4 @@
-# send-requests-to-url
+# Send-Requests-to-URL
 Commons CLI で argparse
 
 ## Description
@@ -6,15 +6,15 @@ Commons CLI で argparse
 
 ## Usage
 ### Run
-```
-gradlew run -P args="-u http://example.com"
+```sh
+./gradlew run -P args="-u http://example.com"
 ```
 
 ### Options
- * `-u`,`--url` `<url>` _宛先のURL, 必須_
- * `-t`,`--trials` `<int>` _送信回数, 初期値1_
- * `-i`,`--interval` `<int>` _送信間隔(sec), 初期値1_
- * `-d`,`--delay` _始めに遅延する_
+* `-u`, `--url` `<url>` 宛先のURL, **必須**
+* `-t`, `--trials` `<int>` 送信回数, 初期値1
+* `-i`, `--interval` `<int>` 送信間隔(sec), 初期値1
+* `-d`, `--delay` 始めに遅延する
 
 送信回数1回かつ間隔が1秒で遅延なしのとき最速で実行
 
